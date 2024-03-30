@@ -1,0 +1,92 @@
+.image-container {
+  display: flex;
+  flex-direction: column; /* Stack images vertically on small screens */
+}
+
+.left-image,
+.right-image {
+  width: 100%; /* Ensure images take full width on small screens */
+  max-width: 100%; /* Ensure images don't exceed their container width */
+  margin-bottom: 10px; /* Add some spacing between images */
+}
+
+@media only screen and (max-width: 768px) {
+  body{
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  img{
+    height: 30px;
+    width: 30px;
+  }
+  .image-container {
+    flex-direction: row; /* Display images side by side on larger screens */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .left-image,
+  .right-image {
+    margin: 30px;
+    width: auto; /* Reset width to default for larger screens */
+    max-width: 55%; /* Limit image width on larger screens */
+    margin-bottom: 0; /* Remove spacing between images */
+  }
+
+   .explore{
+    display: flex;
+    text-align: center;
+    max-width: 600px;
+    font-size: 24px;
+    margin-top: 50px;
+   }
+
+   .group1{
+    height: 39px;
+    width: 300px;
+   }
+
+   .plusminus{
+    position: relative;
+    top:37px;
+    left: 37px;
+  }
+    .map1{
+      display: flex;
+      align-items: center;
+      height: 450px;
+      width: 300px;
+    }
+
+    .quicktext{
+      color: #EC6F2D;
+      margin-left: 30px;
+    }
+
+    .arrowpic{
+      height: 15px;
+      width: 15px;
+    }
+
+    .events {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      gap: 10px; 
+    }
+    
+    .eventdiv {
+      display: flex;
+      align-items: center;
+    }
+    
+    .arrowpic {
+      margin-right: 5px;
+    }
+    
+    .eventstext {
+      font-size: 10px;
+    }
+    
+
+}
