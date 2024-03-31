@@ -8,7 +8,11 @@ import finance from "./../../assets/CategoriesFilter/finance.svg"
 import ict from "./../../assets/CategoriesFilter/ict.svg"
 import others from "./../../assets/CategoriesFilter/others.svg"
 import soft from "./../../assets/CategoriesFilter/soft.svg"
-import { IoMdMenu, IoIosArrowForward, IoIosArrowDown, IoIosSearch, IoIosClose } from "react-icons/io";
+import makerspace from "./../../assets/CategoriesFilter/makerspace.svg"
+import cacttus from "./../../assets/CategoriesFilter/cacttus.svg"
+import ubt from "./../../assets/CategoriesFilter/ubt.svg"
+import innovemia from "./../../assets/CategoriesFilter/innovemia.svg"
+import { IoMdMenu, IoIosArrowForward, IoIosArrowDown, IoIosArrowBack,IoIosSearch, IoIosClose } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const CategoriesFilter = () => {
@@ -17,6 +21,13 @@ const CategoriesFilter = () => {
 
     const handleToggleTrainings = () => {
         setShowTrainings(!showTrainings);
+        setShowSubcategory(false);
+    };
+
+    const [showSubcategory, setShowSubcategory] = useState(false);
+
+    const handleToggleSubcategory = () => {
+        setShowSubcategory(!showSubcategory);
     };
 
     return (
@@ -43,7 +54,7 @@ const CategoriesFilter = () => {
                 <p>Choose a category</p>
 
                 <div className='categories'>
-                    <div className='category'>
+                    <div className='category' onClick={handleToggleSubcategory}>
                         <div className='firstpc'>
                             <div>
                                 <img src={ict} alt="" />
@@ -101,6 +112,76 @@ const CategoriesFilter = () => {
                             <h3>Others</h3>
                         </div>
                         <IoIosArrowForward color='#EC6F2D'/>
+                    </div>
+                </div>
+                
+                <div className="socials">
+                    <FaLinkedin class="socialicon"/>
+                    <FaFacebookF class="socialicon"/>
+                    <FaInstagram class="socialicon"/>
+                </div>
+
+                <p className='followus'>Follow us to stay updated</p>
+
+            </div>
+
+            <div className={`trainings subcategory ${showSubcategory ? 'slide-left' : ''}`}>
+            
+                <h1>ICT & Technology</h1>
+                <div className='backtomain' onClick={handleToggleSubcategory}>
+                    <IoIosArrowBack className="leftarrow"/>
+                    <h5>Back to Training Courses</h5>
+                </div>
+
+                <div className='trainingtypes'>
+                    <div className='trainingtype'>
+                        <div className="imagetraining">
+                            <img src={makerspace} alt="" />
+                        </div>
+                        <div className="texttraining">
+                            <h4>Training in CNC Routing</h4>
+                            <h5>Makerspace Innovation Center</h5>
+                        </div>
+                    </div>
+
+                    <div className='trainingtype'>
+                        <div className="imagetraining">
+                            <img src={makerspace} alt="" />
+                        </div>
+                        <div className="texttraining">
+                            <h4>Accounting through software</h4>
+                            <h5>Makerspace Innovation Center</h5>
+                        </div>
+                    </div>
+
+                    <div className='trainingtype'>
+                        <div className="imagetraining">
+                            <img src={cacttus} alt="" />
+                        </div>
+                        <div className="texttraining">
+                            <h4>Digital Marketing Course</h4>
+                            <h5>Cacttus Education</h5>
+                        </div>
+                    </div>
+
+                    <div className='trainingtype'>
+                        <div className="imagetraining">
+                            <img src={ubt} alt="" />
+                        </div>
+                        <div className="texttraining">
+                            <h4>Microsoft Azure Cloud</h4>
+                            <h5>UBT University</h5>
+                        </div>
+                    </div>
+
+                    <div className='trainingtype'>
+                        <div className="imagetraining">
+                            <img src={innovemia} alt="" />
+                        </div>
+                        <div className="texttraining">
+                            <h4>Digital and Tech Enterpreneurship</h4>
+                            <h5>Innovemia Academy</h5>
+                        </div>
                     </div>
                 </div>
                 
