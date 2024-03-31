@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+#mapimage{
+    width: 100vw;
+    height: 100vh;
+}
+
+.headermobile{
+    width: 90%;
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    background: linear-gradient(to bottom, #fff 70%, #ffffff85);
+    padding: 20px 5%;
+}
+
+.headermobile img{
+    width: 100px;
+}
+
+.navmobile{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuicon{
+    color: white;
+    background-color: var(--orange);
+    border-radius: 5px;
+    padding: 2px;
+    width: 25px;
+    height: 25px;
+}
+
+.headermobile h1{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.searchbox{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrowdownicon{
+    color: var(--orange);
+    position: relative;
+    top: 2px;
+}
+
+.dropdownsearch{
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    border: 1px solid var(--orange);
+    padding: 5px 7px;
+    padding-left: 10px;
+    background-color: white;
+    height: 100%;
+}
+
+.searchbox input{
+    height: 100%;
+    border: 1px solid var(--orange);
+    border-left: none;
+    border-right: none;
+    font-style: italic;
+    font-size: 12px;
+    padding-left: 10px;
+    width: 80%;
+    outline: none;
+}
+
+.searchbutton{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 1px solid var(--orange);
+    border-left: none;
+    background-color: white;
+    height: 100%;
+    padding: 5px 7px;
+    padding-right: 10px;
+}
+
+.searchicon{
+    color: var(--orange);
+    position: relative;
+    top: 2px;
+    width: 15px;
+    height: 15px;
+}
+
+.footermobile{
+    z-index: 99;
+    background: linear-gradient(to top, #fff 70%, #ffffff85);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 5%;
+    padding-top: 0;
+}
+
+.quicklinks{
+    color: var(--orange);
+    text-decoration: underline;
+    font-weight: 400;
+    font-size: 14px;
+    position: relative;
+    top: 10px;
+}
+
+.footerlinks{
+    display: flex;
+    gap: 10px;
+}
+
+.footerlinks div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerlinks p{
+    font-size: 11px;
+}
+
+.arrowlefticon{
+    color: var(--orange);
+    position: relative;
+    bottom: 1px;
+}
