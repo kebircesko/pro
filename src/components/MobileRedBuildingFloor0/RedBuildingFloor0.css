@@ -1,3 +1,148 @@
-.container{
-    
-}
+@media only screen and (max-width: 768px) {
+    .container {
+      width: 100%;
+    }
+  
+    .container .NavBar {
+      width: 100%;
+      height: 114px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 1) 83%,
+        rgba(255, 255, 255, 0.08167016806722693) 100%
+      );
+    }
+    .logo {
+      width: 100px;
+      height: 29px;
+      margin-left: 32px;
+    }
+    .HamburgerMeny {
+      padding: 10px;
+      background-color: #ec6f2d;
+      border-radius: 10px;
+      color: white;
+      /* font-size: 20px; */
+      margin-right: 31px;
+    }
+    .MainContent {
+    }
+    .MapFull {
+      width: 100%;
+      height: 100%;
+    }
+    .topBuilding {
+      rotate: 6deg;
+      width: 25px;
+      height: 95px;
+      margin-top: -1032px;
+      margin-left: 271px;
+    }
+    .modal {
+      display: none;
+      position: absolute;
+      top: 434px;
+      text-align: center;
+      left: 0;
+      z-index: 999;
+      width: 100%;
+      height: 100%;
+      background: white;
+      border-top-left-radius: 5%;
+      border-top-right-radius: 5%;
+    }
+    .redBuildings {
+      font-weight: 500;
+    }
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 10px;
+      padding: 0px 30px;
+    }
+  
+    .tab-buttons {
+      display: flex;
+      border: 1px solid #ec6f2d;
+      border-radius: 50px;
+    }
+  
+    .tab-button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      border-radius: 0px;
+      border-right: 1px solid #ec6f2d;
+    }
+  
+    .tab-button.active {
+      background-color: #ec6f2d;
+      color: white;
+      border-bottom: 1px solid #ec6f2d;
+    }
+  
+    .tab-button:first-of-type {
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+    }
+  
+    .tab-button:last-of-type {
+      border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px;
+      border-right: none;
+    }
+  
+    .tab-content {
+      padding: 1px;
+      border: none;
+    }
+    .imagediv img {
+      width: 100%;
+      height: auto;
+      margin-top: 47px;
+    }
+    .arrowdownicon {
+      color: #ec6f2d;
+      position: relative;
+      top: 2px;
+      rotate: 270deg;
+      font-size: 20px;
+    }
+    .arrowiconFloor {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      margin-top: 43px;
+    }
+    .displayflexonFloor0 {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .displayflexonFloor0 p{
+      margin: 12px 0px;
+      padding: 0;
+    }
+    .footerFloor0 {
+      display: flex;
+      margin-top: 100px;
+    }
+    .orangecolor {
+      color: #ec6f2d;
+      text-decoration: underline;
+    }
+    .displayFlexRow{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+  
