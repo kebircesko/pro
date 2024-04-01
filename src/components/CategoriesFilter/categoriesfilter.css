@@ -170,6 +170,7 @@
     border-radius: 50px;
     opacity: 0;
     transition: 0.3s;
+    color: #1e1e1e !important;
 }
 
 .showicon{
@@ -314,4 +315,119 @@
     font-weight: 400;
     position: relative;
     bottom: 10px;
+}
+
+.companyinfo{
+    z-index: 1599;
+    background-color: #fff;
+    height: 60vh;
+    width: 100vw;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    position: fixed;
+    bottom: -100%;
+    overflow: scroll;
+    transition: bottom 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide-up{
+    bottom: 0;
+}
+
+.imagetext{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding-inline: 5%;
+}
+
+.imagetext img{
+    width: 30%;
+    height: 110px;
+}
+
+.imagetext p{
+    width: 65%;
+    padding-left: 5%;
+    font-size: 12px;
+    color: #1e1e1e;
+}
+
+.companyinfo h1{
+    text-align: center;
+    font-weight: 600;
+    font-size: 23px;
+    margin-top: 30px;
+    color: #23232E;
+}
+
+.checkmarks div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -20px;
+}
+
+.checkmarks h5{
+    font-weight: 500;
+    font-size: 12px;
+    color: #1e1e1e;
+    width: 80%;
+}
+
+.companyinfo svg{
+    color: var(--orange);
+    width: 35px;
+}
+
+.companyinfo h4{
+    padding-left: 5%;
+    font-weight: 600;
+}
+
+.studies{
+    width: 90%;
+    padding-inline: 5%;
+}
+
+.studies div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: -25px;
+}
+
+.studies h5{
+    font-weight: 500;
+    font-size: 12px;
+    color: #1e1e1e;
+}
+
+.companybuttons{
+    width: 90%;
+    padding-inline: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.companybuttons button{
+    width: 48%;
+    border: 1px solid var(--orange);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.primarycompany{
+    color: white;
+    background-color: var(--orange);
+}
+
+.secondarycompany{
+    color: #1e1e1e;
+    background-color: white;
 }

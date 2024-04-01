@@ -12,6 +12,7 @@ import makerspace from "./../../assets/CategoriesFilter/makerspace.svg"
 import cacttus from "./../../assets/CategoriesFilter/cacttus.svg"
 import ubt from "./../../assets/CategoriesFilter/ubt.svg"
 import innovemia from "./../../assets/CategoriesFilter/innovemia.svg"
+import cacttuspng from "./../../assets/CategoriesFilter/cacttus.png"
 import { IoMdMenu, IoIosArrowForward, IoIosArrowDown, IoIosArrowBack,IoIosSearch, IoIosClose } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 
@@ -29,6 +30,20 @@ const CategoriesFilter = () => {
     const handleToggleSubcategory = () => {
         setShowSubcategory(!showSubcategory);
     };
+
+    const [showCompany, setShowCompany] = useState(false);
+
+    const closeEverything = () => {
+        setShowCompany(false);
+        setShowSubcategory(false);
+        setShowTrainings(false);
+    }
+
+    const handleToggleCompany = () => {
+        setShowCompany(!showCompany);
+        setShowSubcategory(false);
+        setShowTrainings(false);
+    }
 
     return (
         <>
@@ -154,7 +169,7 @@ const CategoriesFilter = () => {
                         </div>
                     </div>
 
-                    <div className='trainingtype'>
+                    <div className='trainingtype' onClick={handleToggleCompany}>
                         <div className="imagetraining">
                             <img src={cacttus} alt="" />
                         </div>
@@ -193,6 +208,47 @@ const CategoriesFilter = () => {
 
                 <p className='followus'>Follow us to stay updated</p>
 
+            </div>
+
+            <div className={`companyinfo ${showCompany ? 'slide-up' : ''}`}>
+                <IoIosClose className={`closeicon ${showCompany ? 'showicon' : ''}`} onClick={closeEverything}/>
+                <h1>Cacttus Education</h1>
+                <div className='imagetext'>
+                    <img src={cacttuspng} alt="" />
+                    <p>Cacttus Education is the first associate V level professional school in the field of Information and Communication Technology. As a higher education institution, Cacttus Education provides students with a professional two-year study program.</p>
+                </div>
+                <br />
+                <div className='checkmarks'>
+                    <div>
+                        <IoIosArrowForward />
+                        <h5>Red Building - 2nd FloorInnovation and Training Park (ITP) Ukë Bytyçi 20000 Prizren, Kosovo</h5>
+                    </div>
+                    <div>
+                        <IoIosArrowForward />
+                        <h5>info@cacttus.education</h5>
+                    </div>
+                    <div>
+                        <IoIosArrowForward />
+                        <h5>+383 (0) 38 600 237</h5>
+                    </div>
+                </div>
+                <h4>Studies</h4>
+                <div className="studies">
+                    <div>
+                        <h5>Web Development</h5>
+                        <IoIosArrowForward />
+                    </div>
+                    <div>
+                        <h5>Network and System Administration</h5>
+                        <IoIosArrowForward />
+                    </div>
+                </div>
+                <br />
+                <div className="companybuttons">
+                    <button className="secondarycompany">Visit Website</button>
+                    <button className="primarycompany">Open in Maps</button>
+                </div>
+                <br />
             </div>
 
             <footer className='footermobile'>
