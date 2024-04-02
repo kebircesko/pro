@@ -1,8 +1,8 @@
 .map3 {
-    margin-top: 50px;
+    margin-top: 160px;
     display: flex;
     align-items: center;
     height: 516px;
     width: 380px;
-    transform: scale(1.5);
+    /* transform: scale(1.5); */
 }

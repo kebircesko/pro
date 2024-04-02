@@ -12,7 +12,7 @@
   
   @media only screen and (max-width: 768px) {
     body{
-      max-width: 100%;
+      max-width: 90%;
       overflow-x: hidden;
     }
     img{
@@ -48,19 +48,20 @@
   
      .plusminus{
       position: relative;
-      top:37px;
+      top: 250px;
       left: 37px;
     }
 
     .updown{
       position: absolute;
-      top:277px;
+      top: 277px;
       left: 340px;
     }
 
 
     .map1 {
-      margin-top: -71px;
+      margin-top: 160px;
+      margin-left: 5px;
       display: flex;
       align-items: center;
       height: 516px;
