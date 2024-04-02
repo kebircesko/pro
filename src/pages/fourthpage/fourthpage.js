@@ -1,10 +1,10 @@
 import '../fourthpage/fourthpage.css';
-import llogo from '../../img/llogo.png';
-import vector from '../../img/Vector.png';
-import group from '../../img/inputi.png';
-import zoom from '../../img/zoom.png';
-import arrow from '../../img/arrow.png';
-import map3 from '../../img/ITPMap2x_3.png';
+import llogo from '../../assets/MobileMainPage/llogo.png';
+import vector from '../../assets/MobileMainPage/Vector.png';
+import group from '../../assets/MobileMainPage/inputi.png';
+// import zoom from '../../img/zoom.png';
+import arrow from '../../assets/MobileMainPage/arrow.png';
+import map3 from '../../assets/MobileMainPage/ITPMap2x_3.png';
 
 
 

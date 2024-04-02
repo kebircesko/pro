@@ -1,8 +1,8 @@
 import '../firstpage/firstpage.css';
-import llogo from '../../img/llogo.png';
-import vector from '../../img/Vector.png';
-import group from '../../img/inputi.png';
-import zoom from '../../img/zoom.png';
+import llogo from '../../assets/MobileMainPage/llogo.png';
+import vector from '../../assets/MobileMainPage/Vector.png';
+import group from '../../assets/MobileMainPage/inputi.png';
+import zoom from '../../assets/MobileMainPage/zoom.png';
 import { Link } from 'react-router-dom';
 
 function Home() {
