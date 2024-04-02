@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { HiArrowLeft } from "react-icons/hi2";
 import { IoIosArrowDown, IoIosClose, IoMdMenu } from "react-icons/io";
 import Cacctus from "../../assets/MobileRedBuildingFloor0/Cacctus.svg";
 import ITP from "../../assets/MobileRedBuildingFloor0/ITP.svg";
@@ -133,6 +134,15 @@ const RedBuildingFloor0 = () => {
                       }`}
                       onClick={handleToggleTrainings}
                     />
+                    <div className="closeiconnn">
+                        <HiArrowLeft
+                          className={`iconDesign ${
+                            showTrainings ? "showiconn" : ""
+                          }`}
+                          onClick={handleToggleTrainings}
+                        />
+                        <h6 id="backRedBuilding">Back to Red Building</h6>
+                      </div>
                     <div>
                       <h1>Become a tenant</h1>
                       <img src={tenant} alt="" className="imageTenant" />
@@ -189,6 +199,15 @@ const RedBuildingFloor0 = () => {
                       }`}
                       onClick={handleToggleTrainings}
                     />
+                    <div className="closeiconnn">
+                        <HiArrowLeft
+                          className={`iconDesign ${
+                            showTrainings ? "showiconn" : ""
+                          }`}
+                          onClick={handleToggleTrainings}
+                        />
+                        <h6 id="backRedBuilding">Back to Red Building</h6>
+                      </div>
                     <div>
                       <h1>Become a tenant</h1>
                       <img src={tenant1} alt="" className="imageTenant" />
@@ -233,213 +252,7 @@ const RedBuildingFloor0 = () => {
                     </div>
                   </div>
                   {/* End of tenant45 */}
-                  {/* Start of RTK */}
-                  <div
-                    className={`tenant subcategoryy ${
-                      showRtk ? "slide-left" : ""
-                    }`}
-                  >
-                    <IoIosClose
-                      className={`closeiconn ${
-                        showTrainings ? "showiconn" : ""
-                      }`}
-                      onClick={handleToggleTrainings}
-                    />
-                    <div className="infoAboutCompany">
-                      <h1 id="titleCompany">
-                        Radio Television of Kosovo - RTK
-                      </h1>
-                      <div className="rowInfo">
-                        <img src={RTK} alt="" className="imageTenantt" />
-                        <p id="textStartInfo">
-                          Radio Television of Kosovo is the public broadcaster
-                          of Kosovo.  The Assembly of the Republic of Kosovo is
-                          the founder of Radio Television of Kosovo.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="paddingForInfoCompany">
-                      <div className="displayflexonFloor00">
-                        <div className="flexTenant">
-                          <IoIosArrowDown className="arrowdowniconn" />
-                          <p id="textStartInfo">
-                            Red Building - 2nd Floor Innovation and Training
-                            Park (ITP) Ukë Bytyçi 20000 Prizren, Kosovo
-                          </p>
-                        </div>
-                        <div id="textStartInfo">
-                          <IoIosArrowDown className="arrowdownicon" />
-                          <p className="infoCompany">info@rtklive.com</p>
-                        </div>
-                        <div id="textStartInfo">
-                          <IoIosArrowDown className="arrowdownicon" />
-                          <p className="infoCompany">038 230 102</p>
-                        </div>
-                      </div>
-                      <div className="programAboutCompany">
-                        <h3>Prograrm</h3>
-                        <div className="subPrograms">
-                          <p>RTKLive</p>
-                          <IoIosArrowDown className="arrowdownicon" />
-                        </div>
-                        <div className="subPrograms">
-                          <p>RTK1</p>
-                          <IoIosArrowDown className="arrowdownicon" />
-                        </div>
-                        <div className="subPrograms">
-                          <p>RTK2</p>
-                          <IoIosArrowDown className="arrowdownicon" />
-                        </div>
-                        <div className="subPrograms">
-                          <p>Radio Kosova</p>
-                          <IoIosArrowDown className="arrowdownicon" />
-                        </div>
-                      </div>
-                      <div className="buttonFooter">
-                        <button className="buttonTransparentBg">
-                          Visit Website
-                        </button>
-                        <button className="buttonColorBg">Open in Maps</button>
-                      </div>
-                    </div>
-                  </div>
-                  {/* End of RTK */}
-                  {/* Start of ITP */}
-                  <div
-                    className={`tenant subcategoryy ${
-                      showItp ? "slide-left" : ""
-                    }`}
-                  >
-                    <IoIosClose
-                      className={`closeiconn ${
-                        showTrainings ? "showiconn" : ""
-                      }`}
-                      onClick={handleToggleTrainings}
-                    />
-                    <div className="infoAboutCompany">
-                      <h1 id="titleCompany">
-                        Innovation and Training Park - Prizren
-                      </h1>
-                      <div className="rowInfo">
-                        <img src={ITP} alt="" className="imageTenantt" />
-                        <p id="textStartInfo">
-                          The Innovation and Training Park (ITP) Prizren is the
-                          most unique location in the region, that fosters
-                          collaboration in a vibrant community, aiming to become
-                          the regional hub for entrepreneurship innovation,
-                          business and skills development.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="paddingForInfoCompany">
-                      <div className="displayflexonFloor00">
-                        <div className="flexTenant">
-                          <IoIosArrowDown className="arrowdowniconn" />
-                          <p id="textStartInfo">
-                            Red Building - 2nd Floor Innovation and Training
-                            Park (ITP) Ukë Bytyçi 20000 Prizren, Kosovo
-                          </p>
-                        </div>
-                        <div id="textStartInfo">
-                          <IoIosArrowDown className="arrowdownicon" />
-                          <p className="infoCompany">itp-prizren@giz.de</p>
-                        </div>
-                        <div id="textStartInfo">
-                          <IoIosArrowDown className="arrowdownicon" />
-                          <p className="infoCompany">+383 38 233 002 801</p>
-                        </div>
-                      </div>
-                      <div className="programAboutCompany">
-                        <h3>Prograrm</h3>
-                        <div className="subPrograms">
-                          <p>Skills Development</p>
-                          <IoIosArrowDown className="arrowdownicon" />
-                        </div>
-                        <div className="subPrograms">
-                          <p>Business and Innovation Support</p>
-                          <IoIosArrowDown className="arrowdownicon" />
-                        </div>
-                        <div className="subPrograms">
-                          <p>Community Managment and Matchmaking</p>
-                          <IoIosArrowDown className="arrowdownicon" />
-                        </div>
-                        <div className="subPrograms">
-                          <p>Workshop and Events</p>
-                          <IoIosArrowDown className="arrowdownicon" />
-                        </div>
-                      </div>
-                      <div className="buttonFooter">
-                        <button className="buttonTransparentBg">
-                          Visit Website
-                        </button>
-                        <button className="buttonColorBg">Open in Maps</button>
-                      </div>
-                    </div>
-                  </div>
-                  {/* End of ITP */}
-                  {/* Start of Cacctus */}
-                  <div
-                    className={`tenant subcategoryy ${
-                      showCacctus ? "slide-left" : ""
-                    }`}
-                  >
-                    <IoIosClose
-                      className={`closeiconn ${
-                        showTrainings ? "showiconn" : ""
-                      }`}
-                      onClick={handleToggleTrainings}
-                    />
-                    <div className="infoAboutCompany">
-                      <h1 id="titleCompany">Cacttus Education</h1>
-                      <div className="rowInfo">
-                        <img src={Cacctus} alt="" className="imageTenantt" />
-                        <p id="textStartInfo">
-                          Cacttus Education is the first associate V level
-                          professional school in the field of Information and
-                          Communication Technology. As a higher education
-                          institution, Cacttus Education provides students with
-                          a professional two-year study program.
-                        </p>
-                      </div>
-                    </div>
-                    <div className="paddingForInfoCompany">
-                      <div className="displayflexonFloor00">
-                        <div className="flexTenant">
-                          <IoIosArrowDown className="arrowdowniconn" />
-                          <p id="textStartInfo">
-                            Red Building - 2nd Floor Innovation and Training
-                            Park (ITP) Ukë Bytyçi 20000 Prizren, Kosovo
-                          </p>
-                        </div>
-                        <div id="textStartInfo">
-                          <IoIosArrowDown className="arrowdownicon" />
-                          <p className="infoCompany">info@cacttus.education</p>
-                        </div>
-                        <div id="textStartInfo">
-                          <IoIosArrowDown className="arrowdownicon" />
-                          <p className="infoCompany">+383 (0)38 600 237</p>
-                        </div>
-                      </div>
-                      <div className="programAboutCompany">
-                        <h3>Prograrm</h3>
-                        <div className="subPrograms">
-                          <p>Web Development</p>
-                          <IoIosArrowDown className="arrowdownicon" />
-                        </div>
-                        <div className="subPrograms">
-                          <p>Network and System Administration</p>
-                          <IoIosArrowDown className="arrowdownicon" />
-                        </div>
-                      </div>
-                      <div className="buttonFooter">
-                        <button className="buttonTransparentBg">
-                          Visit Website
-                        </button>
-                        <button className="buttonColorBg">Open in Maps</button>
-                      </div>
-                    </div>
-                  </div>
-                  {/* End of Cacctus */}
+
                   <div
                     className="place1"
                     onClick={handleToggleSubcategoryy}
@@ -509,6 +322,17 @@ const RedBuildingFloor0 = () => {
                         }`}
                         onClick={handleToggleTrainings}
                       />
+
+                      <div className="closeiconnn">
+                        <HiArrowLeft
+                          className={`iconDesign ${
+                            showTrainings ? "showiconn" : ""
+                          }`}
+                          onClick={handleToggleTrainings}
+                        />
+                        <h6 id="backRedBuilding">Back to Red Building</h6>
+                      </div>
+
                       <div className="infoAboutCompany">
                         <h1 id="titleCompany">
                           Innovation and Training Park - Prizren
@@ -616,6 +440,15 @@ const RedBuildingFloor0 = () => {
                           }`}
                           onClick={handleToggleTrainings}
                         />
+                        <div className="closeiconnn">
+                          <HiArrowLeft
+                            className={`iconDesign ${
+                              showTrainings ? "showiconn" : ""
+                            }`}
+                            onClick={handleToggleTrainings}
+                          />
+                          <h6 id="backRedBuilding">Back to Red Building</h6>
+                        </div>
                         <div>
                           <h1>Become a tenant</h1>
                           <img src={tenant} alt="" className="imageTenant" />
@@ -674,6 +507,15 @@ const RedBuildingFloor0 = () => {
                           }`}
                           onClick={handleToggleTrainings}
                         />
+                        <div className="closeiconnn">
+                          <HiArrowLeft
+                            className={`iconDesign ${
+                              showTrainings ? "showiconn" : ""
+                            }`}
+                            onClick={handleToggleTrainings}
+                          />
+                          <h6 id="backRedBuilding">Back to Red Building</h6>
+                        </div>
                         <div>
                           <h1>Become a tenant</h1>
                           <img src={tenant1} alt="" className="imageTenant" />
@@ -732,6 +574,15 @@ const RedBuildingFloor0 = () => {
                           }`}
                           onClick={handleToggleTrainings}
                         />
+                        <div className="closeiconnn">
+                          <HiArrowLeft
+                            className={`iconDesign ${
+                              showTrainings ? "showiconn" : ""
+                            }`}
+                            onClick={handleToggleTrainings}
+                          />
+                          <h6 id="backRedBuilding">Back to Red Building</h6>
+                        </div>
                         <div className="infoAboutCompany">
                           <h1 id="titleCompany">
                             Radio Television of Kosovo - RTK
@@ -806,6 +657,15 @@ const RedBuildingFloor0 = () => {
                           }`}
                           onClick={handleToggleTrainings}
                         />
+                        <div className="closeiconnn">
+                          <HiArrowLeft
+                            className={`iconDesign ${
+                              showTrainings ? "showiconn" : ""
+                            }`}
+                            onClick={handleToggleTrainings}
+                          />
+                          <h6 id="backRedBuilding">Back to Red Building</h6>
+                        </div>
                         <div className="infoAboutCompany">
                           <h1 id="titleCompany">
                             Innovation and Training Park - Prizren
@@ -882,6 +742,15 @@ const RedBuildingFloor0 = () => {
                           }`}
                           onClick={handleToggleTrainings}
                         />
+                        <div className="closeiconnn">
+                          <HiArrowLeft
+                            className={`iconDesign ${
+                              showTrainings ? "showiconn" : ""
+                            }`}
+                            onClick={handleToggleTrainings}
+                          />
+                          <h6 id="backRedBuilding">Back to Red Building</h6>
+                        </div>
                         <div className="infoAboutCompany">
                           <h1 id="titleCompany">Cacttus Education</h1>
                           <div className="rowInfo">
@@ -942,9 +811,6 @@ const RedBuildingFloor0 = () => {
                         </div>
                       </div>
                       {/* End of Cacctus */}
-                      {/* Start Normal Code HEre */}
-
-                      {/* End Code Here */}
                       <div className="displayflexonFloor0">
                         <IoIosArrowDown className="arrowdownicon" />
                         <p>University of Prizren - UPZ</p>
@@ -955,7 +821,10 @@ const RedBuildingFloor0 = () => {
                       </div>
                     </div>
                     <div className="arrowiconFloor">
-                      <div className="displayflexonFloor0" onClick={handleToggleRtk}>
+                      <div
+                        className="displayflexonFloor0"
+                        onClick={handleToggleRtk}
+                      >
                         <IoIosArrowDown className="arrowdownicon" />
                         <p>RTK</p>
                       </div>
