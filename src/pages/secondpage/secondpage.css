@@ -1,0 +1,294 @@
+.image-container {
+    display: flex;
+    flex-direction: column; 
+  }
+  
+  .left-image,
+  .right-image {
+    width: 100%;
+    max-width: 100%; 
+    margin-bottom: 10px; 
+  }
+  
+  @media only screen and (max-width: 768px) {
+    body{
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+    img{
+      height: 30px;
+      width: 30px;
+    }
+    .image-container {
+      flex-direction: row; 
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .left-image,
+    .right-image {
+      margin: 30px;
+      width: auto; 
+      max-width: 55%; 
+      margin-bottom: 0; 
+    }
+  
+     .explore{
+      display: flex;
+      text-align: center;
+      max-width: 600px;
+      font-size: 24px;
+      margin-top: 50px;
+     }
+  
+     .group1{
+      height: 39px;
+      width: 300px;
+     }
+  
+     .plusminus{
+      position: relative;
+      top:37px;
+      left: 37px;
+    }
+
+    .updown{
+      position: absolute;
+      top:277px;
+      left: 340px;
+    }
+
+
+    .map1 {
+      margin-top: -71px;
+      display: flex;
+      align-items: center;
+      height: 516px;
+      width: 380px;
+  }
+  
+      .quicktext{
+        color: #EC6F2D;
+        margin-left: 30px;
+      }
+  
+      .arrowpic{
+        height: 15px;
+        width: 15px;
+      }
+  
+      .events {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        gap: 10px; 
+      }
+      
+      .eventdiv {
+        display: flex;
+        align-items: center;
+      }
+      
+      .arrowpic {
+        margin-right: 5px;
+      }
+      
+      .eventstext {
+        font-size: 10px;
+      }
+      
+      .popup {
+        position: fixed;
+        bottom: 45px;
+        left: 45%;
+        transform: translateX(-50%);
+        width: 90%; /* Adjust the width as needed */
+        max-width: 400px; /* Set a maximum width if necessary */
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 999;
+        text-align: center;
+    }
+    
+      
+      .popup p {
+        margin: 10px 0;
+      }
+      
+      .popup button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      
+      .popup-icon {
+        width: 50px; 
+        height: 50px;
+        margin-bottom: 10px;
+        border-radius: 50%; 
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+      }
+      
+
+    /* Pjesa e TARIKIT */
+
+
+    .closeicon{
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      left: 20px;
+      bottom: 54vh;
+      background-color: white;
+      border-radius: 50px;
+      opacity: 0;
+      transition: 0.3s;
+      color: #1e1e1e !important;
+  }
+  
+  .showicon{
+      opacity: 1;
+      transition: 0.3s;
+  }
+
+   /* Pjesa e kodit te tarikit */
+
+
+   .companyinfo{
+    z-index: 1599;
+    background-color: #fff;
+    height: 60vh;
+    width: 100vw;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    position: fixed;
+    bottom: -100%;
+    overflow: scroll;
+    transition: bottom 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slide-up{
+    bottom: 0;
+}
+
+.imagetext{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    padding-inline: 5%;
+}
+
+.imagetext img{
+    width: 30%;
+    height: 110px;
+}
+
+.imagetext p{
+    width: 65%;
+    padding-left: 5%;
+    font-size: 12px;
+    color: #1e1e1e;
+}
+
+.companyinfo h1{
+    text-align: center;
+    font-weight: 600;
+    font-size: 23px;
+    margin-top: 30px;
+    color: #23232E;
+}
+
+.checkmarks div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: -20px;
+}
+
+.checkmarks h5{
+    font-weight: 500;
+    font-size: 12px;
+    color: #1e1e1e;
+    width: 80%;
+}
+
+.companyinfo svg{
+    color: var(--orange);
+    width: 35px;
+}
+
+.companyinfo h4{
+    padding-left: 5%;
+    font-weight: 600;
+}
+
+.studies{
+    width: 90%;
+    padding-inline: 5%;
+}
+
+.studies div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: -25px;
+}
+
+.studies h5{
+    font-weight: 500;
+    font-size: 12px;
+    color: #1e1e1e;
+}
+
+.companybuttons{
+    width: 90%;
+    padding-inline: 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.companybuttons button{
+    width: 48%;
+    border: 1px solid var(--orange);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.primarycompany{
+    color: white;
+    background-color: var(--orange);
+}
+
+.secondarycompany{
+    color: #1e1e1e;
+    background-color: white;
+}
+
+.close-icon {
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  bottom: 450px;
+  left: 20px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #000; /* Change the color as needed */
+}
+
+.close-icon:hover {
+  color: #ff0000; /* Change the hover color as needed */
+}
+
+  
+  }
+  

@@ -1,0 +1,8 @@
+.map2 {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    height: 516px;
+    width: 380px;
+    transform: scale(1.5);
+}

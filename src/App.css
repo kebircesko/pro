@@ -1,13 +1,13 @@
 .image-container {
   display: flex;
-  flex-direction: column; /* Stack images vertically on small screens */
+  flex-direction: column; 
 }
 
 .left-image,
 .right-image {
-  width: 100%; /* Ensure images take full width on small screens */
-  max-width: 100%; /* Ensure images don't exceed their container width */
-  margin-bottom: 10px; /* Add some spacing between images */
+  width: 100%;
+  max-width: 100%; 
+  margin-bottom: 10px; 
 }
 
 @media only screen and (max-width: 768px) {
@@ -20,7 +20,7 @@
     width: 30px;
   }
   .image-container {
-    flex-direction: row; /* Display images side by side on larger screens */
+    flex-direction: row; 
     justify-content: space-between;
     align-items: center;
   }
@@ -28,9 +28,9 @@
   .left-image,
   .right-image {
     margin: 30px;
-    width: auto; /* Reset width to default for larger screens */
-    max-width: 55%; /* Limit image width on larger screens */
-    margin-bottom: 0; /* Remove spacing between images */
+    width: auto; 
+    max-width: 55%; 
+    margin-bottom: 0; 
   }
 
    .explore{
