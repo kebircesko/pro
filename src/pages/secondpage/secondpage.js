@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 // import llogo from '../../assets/MobileMainPage/llogo.png';
 // import vector from '../../assets/MobileMainPage/Vector.png';
@@ -44,7 +44,8 @@ import cacttuspng from "./../../assets/CategoriesFilter/cacttus.png"
 import adaptech from "./../../assets/CategoriesFilter/adaptech.svg"
 import eizek from "./../../assets/CategoriesFilter/eizek.svg"
 import hangar from "./../../assets/CategoriesFilter/hangar.svg"
-
+import internation from '../../assets/MobileMainPage/international.png';
+import deb from '../../assets/MobileMainPage/Deb.png';
 function Secondpage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [map1, map2, map3];
@@ -65,6 +66,9 @@ function Secondpage() {
         setShowTrainings(!showTrainings);
         setShowSubcategory(false);
     };
+
+    
+
 
     const [showSubcategory, setShowSubcategory] = useState(false);
 
@@ -104,7 +108,6 @@ function Secondpage() {
         setHeaderSub(!headerSub);
         setHeaderCategories(!headerCategories);
     }
-
 
 
   // Pjesa e Tarikit
@@ -158,21 +161,57 @@ function Secondpage() {
     setPopupInfo(location);
   };
 
+
+
+  // Pjesa e Eventev
+const [showEventPopup, setShowEventPopup] = useState(false);
+const [showEventPopup1, setShowEventPopup1] = useState(false); // Shto shoEventPopup1
+
+const [selectedIndex, setSelectedIndex] = useState(null);
+
+// Event Popup Toggle
+const handleEventToggle = () => {
+    setShowEventPopup(!showEventPopup);
+    setShowEventPopup1(false); // Nqs popupi 1 është hapur, e mbyllim atë kur të hapet popupi kryesor
+    setSelectedIndex(null);
+};
+
+// Event Popup 1 Toggle
+const handleEventPopup1Toggle = () => {
+    setShowEventPopup1(!showEventPopup1);
+};
+
+// Eventet dinamike
+const events = [
+    {
+        image: foss4g,
+        buttonText: 'Happening now',
+        title: 'FOSS4G 2023',
+        date: '26 November - 02 December',
+        url: '2023.foss4g.org'
+    },
+    {
+        image: deb,
+        buttonText: 'Upcoming event',
+        title: 'DEBCONF Kosovo 22',
+        date: '17 December - 24 December',
+        url: 'debconf22.debconf.org'
+    },
+    {
+        image: internation,
+        buttonText: 'Upcoming event',
+        title: 'International Summer School',
+        date: '03 - 13 January 2024',
+        url: 'uni-prizren.com/summer-school'
+    }
+];
+
+
+
   return (
     <div>
-      {/* <div className="image-container">
-        <Link to="/">
-          <img src={llogo} alt="L Logo" className="left-image" />
-        </Link>
-        <img src={vector} alt="Vector" className="right-image" />
-      </div> */}
-      {/* <div className="info-container">
-        <h2 className="explore">Explore and navigate around the Innovation and Training Park</h2>
-        <center>
-          <img className="group1" src={group} alt="Group" />
-        </center>
-      </div> */}
-      <header className='headermobile'>
+        {/* Header */}
+       <header className='headermobile'>
                 <nav className='navmobile'>
                     <img src={logo} alt="" />
                     <IoMdMenu className="menuicon" />
@@ -273,7 +312,10 @@ function Secondpage() {
                     </div>
                     </div>
                 </div>
-            </header>
+            </header> 
+            {/* Header */}
+
+            {/* Maping part */}
       <div>
         <div className="plusminus">
           <img className="plusimage" src={plus} alt="Plus" onClick={handleNextImage} />
@@ -309,26 +351,9 @@ function Secondpage() {
           ))}
         </center>
       </div>
-      {/* <div>
-        <p className="quicktext">Quick links:</p>
-      </div> */}
-      {/* <div>
-        <div className="events">
-          <div className="eventdiv">
-            <img className="arrowpic" src={arrow} alt="Arrow" />
-            <p className="eventstext">Events</p>
-          </div>
-          <div className="eventdiv">
-            <img className="arrowpic" src={arrow} alt="Arrow" />
-            <p className="eventstext">Training programs</p>
-          </div>
-          <div className="eventdiv">
-            <img className="arrowpic" src={arrow} alt="Arrow" />
-            <p className="eventstext">Restaurant&Bars</p>
-          </div>
-        </div>
-      </div> */}
-
+      {/* Maping part */}
+  
+       {/* Showtraining */}
 <div className={`trainings ${showTrainings ? 'slide-in' : ''}`}>
                 <IoIosClose className={`closeicon ${showTrainings ? 'showicon' : ''}`} onClick={handleToggleTrainings}/>
                 <h1>Trainings</h1>
@@ -516,24 +541,109 @@ function Secondpage() {
                 </div>
                 <br />
             </div>
+            {/* Showtraining */}
 
-            <footer className='footermobile'>
-                <p className='quicklinks'>Quick Links:</p>
-                <div className='footerlinks'>
-                    <div>
-                        <IoIosArrowForward className="arrowrighticon"/>
-                        <p>Events</p>
-                    </div>
-                    <div onClick={handleToggleTrainings}>
-                        <IoIosArrowForward className="arrowrighticon"/>
-                        <p>Training programs</p>
-                    </div>
-                    <div>
-                        <IoIosArrowForward className="arrowrighticon"/>
-                        <p>Restaurant & Bars</p>
-                    </div>
+
+
+         {/* Footer */}
+         <footer className='footermobile'>
+        <p className='quicklinks'>Quick Links:</p>
+        <div className='footerlinks'>
+        <div onClick={handleEventToggle}>
+            <IoIosArrowForward className="arrowrighticon"/>
+            <p>Events</p>
+          </div>
+          <div onClick={handleToggleTrainings}>
+            <IoIosArrowForward className="arrowrighticon"/>
+            <p>Training programs</p>
+          </div>
+          <div>
+            <IoIosArrowForward className="arrowrighticon"/>
+            <p>Restaurant & Bars</p>
+          </div>
+        </div>
+      </footer>
+            {/* Footer */}
+     
+
+
+{/* Event Popup */}
+{showEventPopup && (
+    <div className="popup">
+        <div className="companyinfo">
+            <IoIosClose className='iconclosing'  onClick={() => setShowEventPopup(false)} />
+            <div className="divevent" onClick={() => handleEventPopup1Toggle()}> 
+    <div className='leftevent'>
+        <img className='leftimage' src={events[0].image} alt="" />
+    </div>
+    <div className='rightevent'>
+        <button className='buttonevent'>{events[0].buttonText}</button>
+        <h3>{events[0].title}</h3>
+        <p className='fossdate'>{events[0].date}</p>
+        <p className='fosscolor'>{events[0].url}</p>
+    </div>
+</div>
+            <hr></hr>
+            <div className="divevent" onClick={() => handleEventPopup1Toggle()}> {/* Shto onClick për t'i hapur popup 1 */}
+                <div className='leftevent'>
+                    <img className='leftimage' src={events[1].image} alt="" />
                 </div>
-            </footer>
+                <div className='rightevent'>
+                    <p className='fosscolor'>{events[1].buttonText}</p>
+                    <h3>{events[1].title}</h3>
+                    <p className='fossdate'>{events[1].date}</p>
+                    <p className='fosscolor'>{events[1].url}</p>
+                </div>
+            </div>
+            <div className="divevent" onClick={() => handleEventPopup1Toggle()}> {/* Shto onClick për t'i hapur popup 1 */}
+                <div className='leftevent'>
+                    <img className='leftimage' src={events[2].image} alt="" />
+                </div>
+                <div className='rightevent'>
+                    <p className='fosscolor'>{events[2].buttonText}</p>
+                    <h3 className='specialtext'>{events[2].title}</h3>
+                    <p className='fossdate'>{events[2].date}</p>
+                    <p className='fosscolor'>{events[2].url}</p>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+)}
+
+{/* Event Popup 1 */}
+{showEventPopup1 && (
+  <div className="popup">
+  <div className="companyinfo">
+      <IoIosClose className='iconclosing' onClick={() => setShowEventPopup1(false)} />
+      <div className="divevent" onClick={() => handleEventPopup1Toggle()}> 
+<div className='leftevent'>
+  <img className='leftimage' src={events[0].image} alt="" />
+</div>
+<div className='rightevent'>
+  <button className='buttonevent'>{events[0].buttonText}</button>
+  <h3 >{events[0].title}</h3>
+  <p className='fossdate'>{events[0].date}</p>
+  <p className='fosscolor'>{events[0].url}</p>
+</div>
+</div>
+<h3 className='aboutstyle'>About FOSS4G</h3>
+<p className='companymoreinfo'>Organized by OSGeo and with more than 15 years of experience, this international annual gathering of location enthusiasts is the largest global gathering for geospatial software. FOSS4G brings together developers, users, decision-makers and observers from a broad spectrum of organizations and fields of operation. Through six days of workshops, presentations, discussions, and cooperation, FOSS4G participants create effective and relevant geospatial products, standards, and protocols.</p>
+<div className="companybuttons">
+        <button className="secondarycompany">Visit Website</button>
+        <button className="primarycompany">Learn More</button>
+      </div>
+     
+      <br />
+  </div>
+</div>
+)}
+
+
+
+
+
+            {/* Company infos */}
       {popupInfo && (
   <div className="popup">
     <div className="companyinfo">
@@ -578,7 +688,7 @@ function Secondpage() {
     </div>
   </div>
 )}
-
+  {/* Company Infos */}
     </div>
   );
 }
