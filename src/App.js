@@ -6,6 +6,8 @@ import Secondpage from './pages/secondpage/secondpage';
 import Thirdpage from './pages/thirdpage/thirdpage';
 import Fourthpage from './pages/fourthpage/fourthpage';
 import Fifthpage from './pages/fifthpage/fifthpage';
+import RedBuildingFloor0 from "./components/MobileRedBuildingFloor0/RedBuildingFloor0";
+
 function App(){
   return(
   <BrowserRouter>
@@ -17,6 +19,7 @@ function App(){
     <Route path='/secondpage' element={<Secondpage/>}/>
     <Route path='/fourthpage' element={<Fourthpage/>}/>
     <Route path='/fifthpage' element={<Fifthpage/>}/>
+    <Route path='/RedBuildingFloor0' element={<RedBuildingFloor0/>}/>
 
 
 
