@@ -39,10 +39,10 @@
   }
   .topBuilding {
     rotate: 6deg;
-    width: 25px;
-    height: 95px;
-    margin-top: 157px;
-    margin-left: 240px;
+    width: 22px;
+    height: 67px;
+    margin-top: 136px;
+    margin-left: 178px;
   }
   .modal {
     display: none;
@@ -292,7 +292,7 @@
     position: inherit;
     top: 50px;
   }
-  .iconDesign{
+  .iconDesign {
     color: #ec6f2d;
     margin-left: 20px;
   }
@@ -327,112 +327,112 @@
   }
   .place1 {
     position: relative;
-    top: -210px;
-    left: 23px;
+    top: -166px;
+    left: 17px;
     width: 44px;
     height: 30px;
     rotate: 326deg;
   }
   .place2 {
     position: relative;
-    top: -223px;
-    left: 53px;
+    top: -177px;
+    left: 34px;
     width: 44px;
     height: 30px;
     rotate: 326deg;
   }
   .place3 {
     position: relative;
-    top: -240px;
-    left: 80px;
+    top: -204px;
+    left: 58px;
     width: 44px;
     height: 30px;
     rotate: 326deg;
   }
   .place4 {
     position: relative;
-    top: -240px;
-    left: 254px;
-    width: 44px;
-    height: 30px;
+    top: -208px;
+    left: 190px;
+    width: 35px;
+    height: 26px;
     rotate: 326deg;
   }
   .place5 {
     position: relative;
-    top: -251px;
-    left: 283px;
-    width: 44px;
-    height: 30px;
+    top: -214px;
+    left: 213px;
+    width: 35px;
+    height: 26px;
     rotate: 326deg;
   }
   .placeBigger1 {
     position: relative;
-    top: -306px;
-    left: 128px;
+    top: -263px;
+    left: 92px;
     width: 44px;
     height: 30px;
     rotate: 43deg;
   }
   .placeBigger2 {
     position: relative;
-    top: -398px;
-    left: 146px;
+    top: -338px;
+    left: 103px;
     width: 44px;
     height: 38px;
     rotate: 49deg;
   }
   .placeBigger3 {
     position: relative;
-    top: -398px;
+    top: -358px;
     left: 146px;
-    width: 44px;
+    width: 30px;
     height: 38px;
     rotate: 49deg;
   }
   .rtkTenant {
     position: relative;
-    top: -424px;
-    left: 150px;
+    top: -379px;
+    left: 103px;
     width: 80px;
     height: 38px;
     rotate: 37deg;
   }
   .cacctusTenant {
     position: relative;
-    top: -404px;
-    left: 270px;
+    top: -342px;
+    left: 167px;
     width: 40px;
     height: 33px;
     rotate: 39deg;
   }
   .cacctusTenant1 {
     position: relative;
-    top: -393px;
-    left: 225px;
+    top: -406px;
+    left: 192px;
     width: 40px;
     height: 33px;
     rotate: 39deg;
   }
   .placee1 {
     position: relative;
-    top: -544px;
-    left: 40px;
+    top: -490px;
+    left: 24px;
     width: 29px;
     height: 33px;
     rotate: 49deg;
   }
   .placee2 {
     position: relative;
-    top: -480px;
-    left: 172px;
+    top: -452px;
+    left: 133px;
     width: 40px;
     height: 21px;
     rotate: 38deg;
   }
   .placee3 {
     position: relative;
-    top: -445px;
-    left: 294px;
+    top: -437px;
+    left: 215px;
     width: 40px;
     height: 33px;
     rotate: 55deg;
