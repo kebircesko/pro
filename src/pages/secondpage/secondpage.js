@@ -647,7 +647,7 @@ const events = [
       {popupInfo && (
   <div className="popup">
     <div className="companyinfo">
-      <IoIosClose className="close-icon" onClick={() => setPopupInfo(null)} />
+      <IoIosClose className="iconclosing" onClick={() => setPopupInfo(null)} />
       <h1>{popupInfo.name}</h1>
       <div className="imagetext">
         <img src={popupInfo.image} alt="" />
