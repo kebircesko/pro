@@ -6,3 +6,18 @@
     width: 380px;
     /* transform: scale(1.5); */
 }
+
+
+.map5{
+    position: absolute;
+    top: 55%;
+    left: 47%;
+   
+}
+
+
+.map6{
+    position: absolute;
+    top: 64%;
+    left: 17%;
+}

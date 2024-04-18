@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import '../fourthpage/fourthpage.css';
 // import llogo from '../../assets/MobileMainPage/llogo.png';
 // import vector from '../../assets/MobileMainPage/Vector.png';
 // import group from '../../assets/MobileMainPage/inputi.png';
 // import zoom from '../../img/zoom.png';
 // import arrow from '../../assets/MobileMainPage/arrow.png';
-import map3 from '../../assets/MobileMainPage/ITPMap2x_3.png';
+import map4 from '../../assets/MobileMainPage/zoomdown.png';
 
 import '../secondpage/secondpage.css';
 
@@ -26,6 +28,7 @@ import cacttuspng from "./../../assets/CategoriesFilter/cacttus.png"
 import adaptech from "./../../assets/CategoriesFilter/adaptech.svg"
 import eizek from "./../../assets/CategoriesFilter/eizek.svg"
 import hangar from "./../../assets/CategoriesFilter/hangar.svg"
+import school from './../../assets/MobileMainPage/school.png';
 
 import { IoMdMenu, IoIosArrowForward, IoIosArrowDown, IoIosArrowBack,IoIosSearch, IoIosClose } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -185,8 +188,10 @@ function Fourthpage() {
       
         <div className='zoom-container-three'>
             
-          <img className='map3' src={map3} alt="Zoom" />
-          
+          <img className='map3' src={map4} alt="Zoom" />
+        <Link to="/RedBuildingFloor0">  <img className='map5' src={school} alt='school'/></Link>
+         <Link to="/RedBuildingFloor0"> <img className='map6' src={school} alt='school'/></Link>
+
         </div>
         <div className={`trainings ${showTrainings ? 'slide-in' : ''}`}>
                 <IoIosClose className={`closeicon ${showTrainings ? 'showicon' : ''}`} onClick={handleToggleTrainings}/>
