@@ -1,0 +1,60 @@
+.floorGreen {
+  rotate: -1deg;
+  width: 22px;
+  height: 44px;
+  margin-top: 136px;
+  margin-left: 173px;
+}
+.imageAutotrada {
+  width: 100%;
+  height: 100%;
+  margin-top: -100px;
+}
+.infoAboutPlace {
+  display: flex;
+  margin-top: -109px;
+  justify-content: space-around;
+  padding: 0px 30px;
+}
+.paragrapColor {
+  color: #5a5a5a;
+}
+.divInformation {
+  padding: 0px 25px;
+}
+.arrowdowniconn {
+  color: #9995bb;
+  position: relative;
+  top: 2px;
+  rotate: 270deg;
+  font-size: 20px;
+}
+.graycolor {
+  color: #9995bb;
+  text-decoration: underline;
+}
+.contactDivGreenBuilding {
+  display: flex;
+}
+
+.buttonTransparentBg {
+  width: 100%;
+  border: 1px solid #689972;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+.buttonColorBg {
+  width: 100%;
+  background: #689972;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+.buttonFooter {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 19px 0px;
+}

@@ -14,7 +14,7 @@ import tenant1 from "../../assets/MobileRedBuildingFloor0/tenant11.svg";
 import "./RedBuildingFloor0.css";
 
 const RedBuildingFloor0 = () => {
-  const [showTrainings, setShowTrainings] = useState(false);
+  const [showTrainings, setShowTrainings] = useState(true);
 
   const handleToggleTrainings = () => {
     setShowTrainings(!showTrainings);
