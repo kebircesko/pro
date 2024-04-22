@@ -12,9 +12,13 @@ import Map from "../../assets/MobileRedBuildingFloor0/itpMap.svg";
 import tenant from "../../assets/MobileRedBuildingFloor0/tenant1.svg";
 import tenant1 from "../../assets/MobileRedBuildingFloor0/tenant11.svg";
 import "./RedBuildingFloor0.css";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const RedBuildingFloor0 = () => {
+  const currentImageIndex = useSearchParams()[0].get(+'currentImage') ?? 2;
+
   const [showTrainings, setShowTrainings] = useState(true);
+  const navigate = useNavigate();
 
   const handleToggleTrainings = () => {
     setShowTrainings(!showTrainings);
@@ -23,6 +27,11 @@ const RedBuildingFloor0 = () => {
     setShowRtk(false);
     setShowItp(false);
     setShowCacctus(false);
+    const params = new URLSearchParams({
+      currentImage: currentImageIndex
+    });
+    const url = `/secondpage?${params.toString()}`;
+    navigate(url);
   };
 
   const [showSubcategory, setShowSubcategory] = useState(false);
@@ -83,9 +92,9 @@ const RedBuildingFloor0 = () => {
       </header>
       <div className="MainContent">
         <img src={Map} alt="" srcset="" className="MapFull" />
-        <div class="topBuilding" onClick={handleToggleTrainings}></div>
+        <div className="topBuilding" onClick={handleToggleTrainings}></div>
         <div
-          class="modal"
+          className="modal"
           className={`trainings ${showTrainings ? "slide-in" : ""}`}
         >
           <IoIosClose

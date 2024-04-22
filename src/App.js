@@ -17,7 +17,6 @@ function App(){
     <Route path='/' element={<Home/>}/>
     <Route path='/secondpage' element={<Secondpage/>}/>
     <Route path='/thirdpage' element={<Thirdpage/>}/>
-    <Route path='/secondpage' element={<Secondpage/>}/>
     <Route path='/fourthpage' element={<Fourthpage/>}/>
     <Route path='/fifthpage' element={<Fifthpage/>}/>
     <Route path='/RedBuildingFloor0' element={<RedBuildingFloor0/>}/>

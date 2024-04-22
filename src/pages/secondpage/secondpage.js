@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 // import llogo from '../../assets/MobileMainPage/llogo.png';
 // import vector from '../../assets/MobileMainPage/Vector.png';
 // import group from '../../assets/MobileMainPage/inputi.png';
@@ -47,8 +49,13 @@ import hangar from "./../../assets/CategoriesFilter/hangar.svg"
 import internation from '../../assets/MobileMainPage/international.png';
 import deb from '../../assets/MobileMainPage/Deb.png';
 function Secondpage() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [searchParams, setSearchParams] = useSearchParams();
+  const [currentImageIndex, setCurrentImageIndex] = useState(+searchParams.get('currentImage') ?? 0);
   const images = [map1, map2, map3];
+
+  useEffect(() => {
+    setSearchParams({currentImage: currentImageIndex});
+  }, [currentImageIndex])
 
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? prevIndex : prevIndex + 1));
@@ -57,6 +64,8 @@ function Secondpage() {
   const handlePreviousImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? prevIndex : prevIndex - 1));
   };
+
+
 
   // Pjesa e Tarikit
 
@@ -155,6 +164,20 @@ function Secondpage() {
     },
   ];
 
+   //  Zoom 
+
+   
+     // Retrieve the location object from React Router
+  const location = useLocation();
+
+  const { mapImage = '' } = location.state || {};
+
+  // Check if the mapImage matches 'map3' and currentImageIndex is 2
+//   const shouldDisplayMap3 = mapImage === 'map3' && currentImageIndex === 2;
+   
+
+
+
   const [popupInfo, setPopupInfo] = useState(null);
 
   const handleMarkerClick = (location) => {
@@ -168,6 +191,8 @@ const [showEventPopup, setShowEventPopup] = useState(false);
 const [showEventPopup1, setShowEventPopup1] = useState(false); // Shto shoEventPopup1
 
 const [selectedIndex, setSelectedIndex] = useState(null);
+
+
 
 // Event Popup Toggle
 const handleEventToggle = () => {
@@ -205,8 +230,6 @@ const events = [
         url: 'uni-prizren.com/summer-school'
     }
 ];
-
-
 
   return (
     <div>
@@ -316,41 +339,58 @@ const events = [
             {/* Header */}
 
             {/* Maping part */}
-      <div>
-        <div className="plusminus">
-          <img className="plusimage" src={plus} alt="Plus" onClick={handleNextImage} />
-          <br />
-          <img className="minuspage" src={minus} alt="Minus" onClick={handlePreviousImage} />
+            <div>
+      {/* Conditional rendering based on mapImage */}
+      {mapImage && (
+        <div>
+          <img src={mapImage} alt="Map Image" />
         </div>
-        {currentImageIndex === 2 && (
-      <div className="updown">
-        <Link to="/thirdpage">
-          <img className="plusimage" src={up} alt="Plus" />
-        </Link>
+      )}
+
+      <div className="plusminus">
+        <img className="plusimage" src={plus} alt="Plus" onClick={handleNextImage} />
         <br />
-        <Link to="/fourthpage">
-          <img className="minuspage" src={down} alt="Minus" />
-        </Link>
+        <img className="minuspage" src={minus} alt="Minus" onClick={handlePreviousImage} />
       </div>
-    )}
-        <center>
+
+      {/* Check if the currentImageIndex is 2 for rendering specific content */}
+      {currentImageIndex === 2 && (
+        <div className="updown">
+          {/* Render map3 */}
+          <div>
+            {/* <img src={map3} alt="Map 3" /> */}
+          </div>
+          <Link to="/thirdpage">
+            <img className="plusimage" src={up} alt="Plus" />
+          </Link>
+          <br />
+          <Link to="/fourthpage">
+            <img className="minuspage" src={down} alt="Minus" />
+          </Link>
+        </div>
+      )}
+
+      <center>
+        {/* Render the image based on currentImageIndex */}
+        <img
+          className="map1"
+          src={images[currentImageIndex]}
+          alt="Map"
+          onClick={() => setPopupInfo(null)}
+        />
+
+        {/* Render markers based on currentImageIndex */}
+        {companyLocations[currentImageIndex].markers.map((marker, index) => (
           <img
-            className="map1"
-            src={images[currentImageIndex]}
-            alt="Map"
-            onClick={() => setPopupInfo(null)}
+            key={index}
+            src={marker.image}
+            alt={marker.name}
+            style={{ position: 'absolute', left: marker.x, top: marker.y, cursor: 'pointer' }}
+            onClick={() => handleMarkerClick(marker)}
           />
-          {companyLocations[currentImageIndex].markers.map((marker, index) => (
-            <img
-              key={index}
-              src={marker.image}
-              alt={marker.name}
-              style={{ position: 'absolute', left: marker.x, top: marker.y, cursor: 'pointer' }}
-              onClick={() => handleMarkerClick(marker)}
-            />
-          ))}
-        </center>
-      </div>
+        ))}
+      </center>
+    </div>
       {/* Maping part */}
   
        {/* Showtraining */}
@@ -422,9 +462,9 @@ const events = [
                 </div>
                 
                 <div className="socials">
-                    <FaLinkedin class="socialicon"/>
-                    <FaFacebookF class="socialicon"/>
-                    <FaInstagram class="socialicon"/>
+                    <FaLinkedin className="socialicon"/>
+                    <FaFacebookF className="socialicon"/>
+                    <FaInstagram className="socialicon"/>
                 </div>
 
                 <p className='followus'>Follow us to stay updated</p>
@@ -492,9 +532,9 @@ const events = [
                 </div>
                 
                 <div className="socials">
-                    <FaLinkedin class="socialicon"/>
-                    <FaFacebookF class="socialicon"/>
-                    <FaInstagram class="socialicon"/>
+                    <FaLinkedin className="socialicon"/>
+                    <FaFacebookF className="socialicon"/>
+                    <FaInstagram className="socialicon"/>
                 </div>
 
                 <p className='followus'>Follow us to stay updated</p>

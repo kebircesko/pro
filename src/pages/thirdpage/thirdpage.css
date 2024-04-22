@@ -1,9 +1,12 @@
 .map2 {
-    margin-top: 160px;
+    margin-top: 101px;
     display: flex;
     align-items: center;
-    height: 516px;
-    width: 380px;
+    height: 583px;
+    position: relative;
+    left: 20px;
+    right: 20px;
+    width: 402px;
     /* transform: scale(1.5); */
 }
 

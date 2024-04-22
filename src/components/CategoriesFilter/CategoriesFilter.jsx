@@ -242,9 +242,9 @@ const CategoriesFilter = () => {
                 </div>
                 
                 <div className="socials">
-                    <FaLinkedin class="socialicon"/>
-                    <FaFacebookF class="socialicon"/>
-                    <FaInstagram class="socialicon"/>
+                    <FaLinkedin className="socialicon"/>
+                    <FaFacebookF className="socialicon"/>
+                    <FaInstagram className="socialicon"/>
                 </div>
 
                 <p className='followus'>Follow us to stay updated</p>
@@ -312,9 +312,9 @@ const CategoriesFilter = () => {
                 </div>
                 
                 <div className="socials">
-                    <FaLinkedin class="socialicon"/>
-                    <FaFacebookF class="socialicon"/>
-                    <FaInstagram class="socialicon"/>
+                    <FaLinkedin className="socialicon"/>
+                    <FaFacebookF className="socialicon"/>
+                    <FaInstagram className="socialicon"/>
                 </div>
 
                 <p className='followus'>Follow us to stay updated</p>

@@ -75,17 +75,17 @@ const GreenFloor = () => {
       </header>
       <div className="MainContent">
         <img src={Map} alt="" srcset="" className="MapFull" />
-        <div class="floorGreen" onClick={handleToggleTrainings}></div>
+        <div className="floorGreen" onClick={handleToggleTrainings}></div>
         <div
-          class="modal"
+          className="modal"
           className={`trainings ${showTrainings ? "slide-in" : ""}`}
         >
           <IoIosClose
             className={`closeicon ${showTrainings ? "showicon" : ""}`}
             onClick={handleToggleTrainings}
           />
-          <img src={Autostrada} alt="" srcset="" class="imageAutotrada" />
-          <div class="infoAboutPlace">
+          <img src={Autostrada} alt="" srcset="" className="imageAutotrada" />
+          <div className="infoAboutPlace">
             <div>
               <h1>150m2</h1>
               <p className="paragrapColor">Space in m2</p>

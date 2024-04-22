@@ -6,6 +6,7 @@ import '../thirdpage/thirdpage.css';
 // import zoom from '../../img/zoom.png';
 // import arrow from '../../assets/MobileMainPage/arrow.png';
 import map3 from '../../assets/MobileMainPage/ITPMap2x_3.png';
+import upmap from '../../assets/MobileMainPage/upmap.png';
 
 import '../secondpage/secondpage.css';
 
@@ -26,14 +27,17 @@ import cacttuspng from "./../../assets/CategoriesFilter/cacttus.png"
 import adaptech from "./../../assets/CategoriesFilter/adaptech.svg"
 import eizek from "./../../assets/CategoriesFilter/eizek.svg"
 import hangar from "./../../assets/CategoriesFilter/hangar.svg"
+import up from '../../assets/MobileMainPage/up.png';
+import down from '../../assets/MobileMainPage/down.png';
 
 import { IoMdMenu, IoIosArrowForward, IoIosArrowDown, IoIosArrowBack,IoIosSearch, IoIosClose } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { Link, useSearchParams } from 'react-router-dom';
 
 
 
 function Thirdpage() {
-
+  const [searchParams, setSearchParams] = useSearchParams();
   const [showTrainings, setShowTrainings] = useState(false);
 
     const handleToggleTrainings = () => {
@@ -80,6 +84,8 @@ function Thirdpage() {
         setHeaderCategories(!headerCategories);
     }
 
+
+    const currentImageIndex = useSearchParams()[0].get(+'currentImage') ?? 2;
 
   return (
     <div>
@@ -188,7 +194,18 @@ function Thirdpage() {
       
         <div className='zoom-container-three'>
             
-          <img className='map2' src={map3} alt="Zoom" />
+          <img className='map2' src={upmap} alt="Zoom" />
+          <div className="updown">
+            <img className="pluspage" src={up} alt="Minus" />
+        <br />
+        <Link         to={{
+          pathname: "/secondpage", 
+          search: `currentImage=${currentImageIndex}`,
+          state: { mapImage: 'map3' }  // Pass the data and currentImageIndex
+        }} >
+          <img className="minuspage" src={down} alt="Minus" />
+        </Link>
+      </div>
           
         </div>
         <div className={`trainings ${showTrainings ? 'slide-in' : ''}`}>
@@ -259,9 +276,9 @@ function Thirdpage() {
                 </div>
                 
                 <div className="socials">
-                    <FaLinkedin class="socialicon"/>
-                    <FaFacebookF class="socialicon"/>
-                    <FaInstagram class="socialicon"/>
+                    <FaLinkedin className="socialicon"/>
+                    <FaFacebookF className="socialicon"/>
+                    <FaInstagram className="socialicon"/>
                 </div>
 
                 <p className='followus'>Follow us to stay updated</p>
@@ -329,9 +346,9 @@ function Thirdpage() {
                 </div>
                 
                 <div className="socials">
-                    <FaLinkedin class="socialicon"/>
-                    <FaFacebookF class="socialicon"/>
-                    <FaInstagram class="socialicon"/>
+                    <FaLinkedin className="socialicon"/>
+                    <FaFacebookF className="socialicon"/>
+                    <FaInstagram className="socialicon"/>
                 </div>
 
                 <p className='followus'>Follow us to stay updated</p>
