@@ -140,7 +140,9 @@ const events = [
     <div>
       <header className='headermobile'>
                 <nav className='navmobile'>
+                    <Link to='/secondpage'>
                     <img src={logo} alt="" />
+                  </Link>
                     <IoMdMenu className="menuicon" />
                 </nav>
                 <br />

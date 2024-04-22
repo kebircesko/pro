@@ -29,10 +29,13 @@ import eizek from "./../../assets/CategoriesFilter/eizek.svg"
 import hangar from "./../../assets/CategoriesFilter/hangar.svg"
 import up from '../../assets/MobileMainPage/up.png';
 import down from '../../assets/MobileMainPage/down.png';
-
+import internation from '../../assets/MobileMainPage/international.png';
+import deb from '../../assets/MobileMainPage/Deb.png';
 import { IoMdMenu, IoIosArrowForward, IoIosArrowDown, IoIosArrowBack,IoIosSearch, IoIosClose } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link, useSearchParams } from 'react-router-dom';
+import foss4g from '../../assets/MobileMainPage/foss4g.svg';
+
 
 
 
@@ -83,6 +86,50 @@ function Thirdpage() {
         setHeaderSub(!headerSub);
         setHeaderCategories(!headerCategories);
     }
+           // Pjesa e Eventev
+const [showEventPopup, setShowEventPopup] = useState(false);
+const [showEventPopup1, setShowEventPopup1] = useState(false); // Shto shoEventPopup1
+
+const [selectedIndex, setSelectedIndex] = useState(null);
+
+
+
+// Event Popup Toggle
+const handleEventToggle = () => {
+    setShowEventPopup(!showEventPopup);
+    setShowEventPopup1(false); // Nqs popupi 1 është hapur, e mbyllim atë kur të hapet popupi kryesor
+    setSelectedIndex(null);
+};
+
+// Event Popup 1 Toggle
+const handleEventPopup1Toggle = () => {
+    setShowEventPopup1(!showEventPopup1);
+};
+
+// Eventet dinamike
+const events = [
+    {
+        image: foss4g,
+        buttonText: 'Happening now',
+        title: 'FOSS4G 2023',
+        date: '26 November - 02 December',
+        url: '2023.foss4g.org'
+    },
+    {
+        image: deb,
+        buttonText: 'Upcoming event',
+        title: 'DEBCONF Kosovo 22',
+        date: '17 December - 24 December',
+        url: 'debconf22.debconf.org'
+    },
+    {
+        image: internation,
+        buttonText: 'Upcoming event',
+        title: 'International Summer School',
+        date: '03 - 13 January 2024',
+        url: 'uni-prizren.com/summer-school'
+    }
+];
 
 
     const currentImageIndex = useSearchParams()[0].get(+'currentImage') ?? 2;
@@ -91,7 +138,9 @@ function Thirdpage() {
     <div>
       <header className='headermobile'>
                 <nav className='navmobile'>
+                <Link to='/secondpage'>
                     <img src={logo} alt="" />
+                  </Link>
                     <IoMdMenu className="menuicon" />
                 </nav>
                 <br />
@@ -395,24 +444,96 @@ function Thirdpage() {
                 </div>
                 <br />
             </div>
-
-            <footer className='footermobile'>
-                <p className='quicklinks'>Quick Links:</p>
-                <div className='footerlinks'>
-                    <div>
-                        <IoIosArrowForward className="arrowrighticon"/>
-                        <p>Events</p>
-                    </div>
-                    <div onClick={handleToggleTrainings}>
-                        <IoIosArrowForward className="arrowrighticon"/>
-                        <p>Training programs</p>
-                    </div>
-                    <div>
-                        <IoIosArrowForward className="arrowrighticon"/>
-                        <p>Restaurant & Bars</p>
-                    </div>
+  {/* Footer */}
+  <footer className='footermobile'>
+        <p className='quicklinks'>Quick Links:</p>
+        <div className='footerlinks'>
+        <div onClick={handleEventToggle}>
+            <IoIosArrowForward className="arrowrighticon"/>
+            <p>Events</p>
+          </div>
+          <div onClick={handleToggleTrainings}>
+            <IoIosArrowForward className="arrowrighticon"/>
+            <p>Training programs</p>
+          </div>
+          <div>
+            <IoIosArrowForward className="arrowrighticon"/>
+            <p>Restaurant & Bars</p>
+          </div>
+        </div>
+      </footer>
+            {/* Footer */}
+                        {/* Event Popup */}
+{showEventPopup && (
+    <div className="popup">
+        <div className="companyinfo">
+            <IoIosClose className='iconclosing'  onClick={() => setShowEventPopup(false)} />
+            <div className="divevent" onClick={() => handleEventPopup1Toggle()}> 
+    <div className='leftevent'>
+        <img className='leftimage' src={events[0].image} alt="" />
+    </div>
+    <div className='rightevent'>
+        <button className='buttonevent'>{events[0].buttonText}</button>
+        <h3>{events[0].title}</h3>
+        <p className='fossdate'>{events[0].date}</p>
+        <p className='fosscolor'>{events[0].url}</p>
+    </div>
+</div>
+            <hr></hr>
+            <div className="divevent" onClick={() => handleEventPopup1Toggle()}> {/* Shto onClick për t'i hapur popup 1 */}
+                <div className='leftevent'>
+                    <img className='leftimage' src={events[1].image} alt="" />
                 </div>
-            </footer>
+                <div className='rightevent'>
+                    <p className='fosscolor'>{events[1].buttonText}</p>
+                    <h3>{events[1].title}</h3>
+                    <p className='fossdate'>{events[1].date}</p>
+                    <p className='fosscolor'>{events[1].url}</p>
+                </div>
+            </div>
+            <div className="divevent" onClick={() => handleEventPopup1Toggle()}> {/* Shto onClick për t'i hapur popup 1 */}
+                <div className='leftevent'>
+                    <img className='leftimage' src={events[2].image} alt="" />
+                </div>
+                <div className='rightevent'>
+                    <p className='fosscolor'>{events[2].buttonText}</p>
+                    <h3 className='specialtext'>{events[2].title}</h3>
+                    <p className='fossdate'>{events[2].date}</p>
+                    <p className='fosscolor'>{events[2].url}</p>
+                </div>
+            </div>
+            <br />
+        </div>
+    </div>
+)}
+
+{/* Event Popup 1 */}
+{showEventPopup1 && (
+  <div className="popup">
+  <div className="companyinfo">
+      <IoIosClose className='iconclosing' onClick={() => setShowEventPopup1(false)} />
+      <div className="divevent" onClick={() => handleEventPopup1Toggle()}> 
+<div className='leftevent'>
+  <img className='leftimage' src={events[0].image} alt="" />
+</div>
+<div className='rightevent'>
+  <button className='buttonevent'>{events[0].buttonText}</button>
+  <h3 >{events[0].title}</h3>
+  <p className='fossdate'>{events[0].date}</p>
+  <p className='fosscolor'>{events[0].url}</p>
+</div>
+</div>
+<h3 className='aboutstyle'>About FOSS4G</h3>
+<p className='companymoreinfo'>Organized by OSGeo and with more than 15 years of experience, this international annual gathering of location enthusiasts is the largest global gathering for geospatial software. FOSS4G brings together developers, users, decision-makers and observers from a broad spectrum of organizations and fields of operation. Through six days of workshops, presentations, discussions, and cooperation, FOSS4G participants create effective and relevant geospatial products, standards, and protocols.</p>
+<div className="companybuttons">
+        <button className="secondarycompany">Visit Website</button>
+        <button className="primarycompany">Learn More</button>
+      </div>
+     
+      <br />
+  </div>
+</div>
+)}
     </div>
   );
 }
