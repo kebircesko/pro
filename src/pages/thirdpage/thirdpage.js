@@ -35,11 +35,53 @@ import { IoMdMenu, IoIosArrowForward, IoIosArrowDown, IoIosArrowBack,IoIosSearch
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Link, useSearchParams } from 'react-router-dom';
 import foss4g from '../../assets/MobileMainPage/foss4g.svg';
+import Zoom from '../../zoom';
+import { useEffect } from "react";
+import * as d3 from "d3";
+import school from './../../assets/MobileMainPage/school.png';
+
+// import map from './map.svg';
 
 
 
 
 function Thirdpage() {
+    useEffect(() => {
+        const svg = d3.select("#map");
+        const image = svg.select("#image");
+    
+        const { width, height } = image.node().getBoundingClientRect();
+        const { width: svgWidth, height: svgHeight } = svg.node().getBoundingClientRect();
+    
+        const minScale = Math.max(svgWidth / width, svgHeight / height);
+    
+        const zoom = d3.zoom()
+          .scaleExtent([minScale, 9])
+          .extent([
+            [0, 0],
+            [svgWidth, svgHeight],
+          ])
+          .translateExtent([
+            [0, 0],
+            [width, height],
+          ])
+          .on("zoom", zoomed);
+    
+        // apply calculated default scale
+        zoom.scaleTo(svg, minScale);
+    
+        svg.call(zoom);
+    
+        function zoomed(event) {
+          const { transform } = event;
+          image.attr("transform", transform.toString());
+        }
+    
+        // Clean up function
+        return () => {
+          svg.on(".zoom", null); // Remove zoom event listener
+        };
+      }, []);
   const [searchParams, setSearchParams] = useSearchParams();
   const [showTrainings, setShowTrainings] = useState(false);
 
@@ -242,8 +284,18 @@ const events = [
             </header>
       
         <div className='zoom-container-three'>
-            
-          <img className='map2' src={upmap} alt="Zoom" />
+           {/* <Zoom/> */}
+          {/* <img className='map2' src={upmap} alt="Zoom" /> */}
+          <div className="container">
+      {/* <Link to="/RedBuildingFloor0"><img className='map7' src={school} alt='school'/></Link>
+      <Link to="/RedBuildingFloor0"><img className='map8' src={school} alt='school'/></Link> */}
+      <svg id="map" width="100%" height="100%" style={{ backgroundColor: "grey" }}>
+        <image id="image" href={upmap} />
+
+        <image className='map7' href={school} />
+        <image className='map8' href={school} />
+      </svg>
+    </div>
           <div className="updown">
             <img className="pluspage" src={up} alt="Minus" />
         <br />

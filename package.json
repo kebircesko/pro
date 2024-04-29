@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-three/fiber": "^8.16.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@types/three": "^0.163.0",
+    "d3": "^7.6.1",
     "leaflet": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -16,6 +19,8 @@
     "react-medium-image-zoom": "^5.1.11",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
+    "react-three-fiber": "^6.0.13",
+    "three": "^0.163.0",
     "use-history": "^1.4.1",
     "web-vitals": "^2.1.4"
   },

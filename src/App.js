@@ -8,6 +8,7 @@ import Fourthpage from './pages/fourthpage/fourthpage';
 import Fifthpage from './pages/fifthpage/fifthpage';
 import RedBuildingFloor0 from "./components/MobileRedBuildingFloor0/RedBuildingFloor0";
 import GreenFloor from "./components/GreenFloor/greenFloor";
+import Zoom from './zoom';
 
 function App(){
   return(
@@ -21,6 +22,7 @@ function App(){
     <Route path='/fifthpage' element={<Fifthpage/>}/>
     <Route path='/RedBuildingFloor0' element={<RedBuildingFloor0/>}/>
     <Route path='/GreenFloor' element={<GreenFloor/>}/>
+    <Route path='/zoom' element={<Zoom/>}/>
 
 
 
