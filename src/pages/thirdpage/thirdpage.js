@@ -56,7 +56,7 @@ function Thirdpage() {
         const minScale = Math.max(svgWidth / width, svgHeight / height);
     
         const zoom = d3.zoom()
-          .scaleExtent([minScale, 9])
+          .scaleExtent([minScale, 3])
           .extent([
             [0, 0],
             [svgWidth, svgHeight],
@@ -283,14 +283,16 @@ const events = [
                 </div>
             </header>
       
-        <div className='zoom-container-three'>
+        <div>
            {/* <Zoom/> */}
           {/* <img className='map2' src={upmap} alt="Zoom" /> */}
           <div className="container">
       {/* <Link to="/RedBuildingFloor0"><img className='map7' src={school} alt='school'/></Link>
       <Link to="/RedBuildingFloor0"><img className='map8' src={school} alt='school'/></Link> */}
-      <svg id="map" width="100%" height="100%" style={{ backgroundColor: "grey" }}>
-        <image id="image" href={upmap} />
+     
+
+      <svg id="map" >
+        <image id="image" className='test100' href={upmap} />
 
         <image className='map7' href={school} />
         <image className='map8' href={school} />
