@@ -37,12 +37,62 @@ import up from '../../assets/MobileMainPage/up.png';
 import down from '../../assets/MobileMainPage/down.png';
 import internation from '../../assets/MobileMainPage/international.png';
 import deb from '../../assets/MobileMainPage/Deb.png';
-
+import { useEffect } from "react";
+import * as d3 from "d3";
+// import school from './../../assets/MobileMainPage/school.png';
 
 import { IoMdMenu, IoIosArrowForward, IoIosArrowDown, IoIosArrowBack,IoIosSearch, IoIosClose } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
+import Zoom from '../../zoom';
 
 function Fourthpage() {
+    useEffect(() => {
+
+        const svg = d3.select("#map");
+        const image = svg.select("#image");
+    
+        const { width, height } = image.node().getBoundingClientRect();
+        const { width: svgWidth, height: svgHeight } = svg.node().getBoundingClientRect();
+    
+        const minScale = Math.max(svgWidth / width, svgHeight / height);
+    
+        const zoom = d3.zoom()
+          .scaleExtent([minScale, 9])
+          .extent([
+            [0, 0],
+            [svgWidth, svgHeight],
+          ])
+          .translateExtent([
+            [0, 0],
+            [width, height],
+          ])
+          .on("zoom", zoomed);
+    
+        // apply calculated default scale
+        zoom.scaleTo(svg, minScale);
+    
+        svg.call(zoom);
+    
+        function zoomed(event) {
+          const { transform } = event;
+          image.attr("transform", transform.toString());
+          // Move the icons based on the current zoom level and transformation
+          svg.selectAll(".icon")
+            .attr("transform", transform.toString());
+        }
+    
+        // Clean up function
+        return () => {
+          svg.on(".zoom", null); // Remove zoom event listener
+        };
+      }, []);
+    
+      // Array containing icon positions and corresponding text
+      const iconData = [
+        { x: 80, y: 500, text: "Multifunctional Building" },
+        { x: 180, y: 400, text: "Multifunctional Building" }
+        // Add more objects as needed for additional icons
+      ];
 
   const [showTrainings, setShowTrainings] = useState(false);
 
@@ -242,11 +292,48 @@ const events = [
                     </div>
                 </div>
             </header>
-      
-        <div className='zoom-container-three'>
+          
+            <div>
+           {/* <Zoom/> */}
+          {/* <img className='map2' src={upmap} alt="Zoom" /> */}
+          <div className="container">
+      <svg id="map" width="100%" height="100%" style={{ backgroundColor: "grey" }}>
+        <image id="image" href={map4} />
+        {/* Add icons */}
+        <g className="icon">
+          {/* Example of adding school icons */}
+          {iconData.map((icon, index) => (
+            <g data-aos="fade-left" key={index}>
+
+               <Link to="/RedBuildingFloor0"> <image href={school} x={icon.x} y={icon.y} width={20} height={20} /> </Link>
+              <text x={icon.x} y={icon.y + 30} textAnchor="middle" fontSize="8px">{icon.text}</text>
+            </g>
+          ))}
+        </g>
+      </svg>
+    </div>
+    <div className="updown">
+         <Link
+        to={{
+          pathname: "/secondpage", 
+          search: `currentImage=${currentImageIndex}`,
+          state: { mapImage: 'map3' }  // Pass the data and currentImageIndex
+        }}
+      >
+                  <img className="pluspage" src={up} alt="Minus" />
+
+      </Link>
+        <br />
+        <Link to="/fourthpage">
+          <img className="minuspage" src={down} alt="Minus" />
+        </Link>
+      </div>
+          
+        </div>
+        {/* <div className='zoom-container-three'>
             
           <img className='map3' src={map4} alt="Zoom" />
-      
+        
         <Link to="/RedBuildingFloor0">  <img className='map5' src={school} alt='school'/></Link>
          <Link to="/RedBuildingFloor0"> <img className='map6' src={school} alt='school'/></Link>
 
@@ -267,7 +354,7 @@ const events = [
         </Link>
       </div>
 
-        </div>
+        </div> */}
         <div className={`trainings ${showTrainings ? 'slide-in' : ''}`}>
                 <IoIosClose className={`closeicon ${showTrainings ? 'showicon' : ''}`} onClick={handleToggleTrainings}/>
                 <h1>Trainings</h1>

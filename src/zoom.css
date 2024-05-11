@@ -9,7 +9,7 @@
     justify-content: center;
     justify-items: center;
     width: 100%;
-    height: calc(100vh);
+    height: 100vh;
   
     overflow: hidden;
     margin-left: 20px;

@@ -6,9 +6,12 @@ import '../thirdpage/thirdpage.css';
 // import zoom from '../../img/zoom.png';
 // import arrow from '../../assets/MobileMainPage/arrow.png';
 import map3 from '../../assets/MobileMainPage/ITPMap2x_3.png';
-import upmap from '../../assets/MobileMainPage/upmap.png';
+import upmap from '../../assets/MobileMainPage/testi.svg';
+
 
 import '../secondpage/secondpage.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import "./../../components/CategoriesFilter/categoriesfilter.css"
 import logo from "./../../assets/CategoriesFilter/logo.png"
@@ -47,6 +50,11 @@ import school from './../../assets/MobileMainPage/school.png';
 
 function Thirdpage() {
     useEffect(() => {
+        AOS.init();
+      }, [])
+
+    useEffect(() => {
+
         const svg = d3.select("#map");
         const image = svg.select("#image");
     
@@ -56,7 +64,7 @@ function Thirdpage() {
         const minScale = Math.max(svgWidth / width, svgHeight / height);
     
         const zoom = d3.zoom()
-          .scaleExtent([minScale, 3])
+          .scaleExtent([minScale, 9])
           .extent([
             [0, 0],
             [svgWidth, svgHeight],
@@ -75,6 +83,9 @@ function Thirdpage() {
         function zoomed(event) {
           const { transform } = event;
           image.attr("transform", transform.toString());
+          // Move the icons based on the current zoom level and transformation
+          svg.selectAll(".icon")
+            .attr("transform", transform.toString());
         }
     
         // Clean up function
@@ -82,6 +93,14 @@ function Thirdpage() {
           svg.on(".zoom", null); // Remove zoom event listener
         };
       }, []);
+    
+      // Array containing icon positions and corresponding text
+      const iconData = [
+        { x: 200, y: 600, text: "Ict and Technology" },
+        { x: 200, y: 350, text: "Autostrada Hangar" }
+        // Add more objects as needed for additional icons
+      ];
+
   const [searchParams, setSearchParams] = useSearchParams();
   const [showTrainings, setShowTrainings] = useState(false);
 
@@ -146,7 +165,7 @@ const handleEventToggle = () => {
 // Event Popup 1 Toggle
 const handleEventPopup1Toggle = () => {
     setShowEventPopup1(!showEventPopup1);
-};
+}
 
 // Eventet dinamike
 const events = [
@@ -287,15 +306,18 @@ const events = [
            {/* <Zoom/> */}
           {/* <img className='map2' src={upmap} alt="Zoom" /> */}
           <div className="container">
-      {/* <Link to="/RedBuildingFloor0"><img className='map7' src={school} alt='school'/></Link>
-      <Link to="/RedBuildingFloor0"><img className='map8' src={school} alt='school'/></Link> */}
-     
-
-      <svg id="map" >
-        <image id="image" className='test100' href={upmap} />
-
-        <image className='map7' href={school} />
-        <image className='map8' href={school} />
+      <svg id="map" width="100%" height="100%" style={{ backgroundColor: "grey" }}>
+        <image id="image" href={upmap} />
+        {/* Add icons */}
+        <g className="icon">
+          {/* Example of adding school icons */}
+          {iconData.map((icon, index) => (
+            <g data-aos="fade-left" key={index}>
+              <image href={school} x={icon.x} y={icon.y} width={20} height={20} />
+              <text x={icon.x} y={icon.y + 30} textAnchor="middle" fontSize="8px">{icon.text}</text>
+            </g>
+          ))}
+        </g>
       </svg>
     </div>
           <div className="updown">

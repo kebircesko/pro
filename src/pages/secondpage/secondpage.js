@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
+
+
 // import llogo from '../../assets/MobileMainPage/llogo.png';
 // import vector from '../../assets/MobileMainPage/Vector.png';
 // import group from '../../assets/MobileMainPage/inputi.png';
@@ -48,7 +50,12 @@ import eizek from "./../../assets/CategoriesFilter/eizek.svg"
 import hangar from "./../../assets/CategoriesFilter/hangar.svg"
 import internation from '../../assets/MobileMainPage/international.png';
 import deb from '../../assets/MobileMainPage/Deb.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 function Secondpage() {
+    useEffect(() => {
+        AOS.init();
+      }, [])
     const [searchParams, setSearchParams] = useSearchParams();
   const [currentImageIndex, setCurrentImageIndex] = useState(+searchParams.get('currentImage') ?? 0);
   const images = [map1, map2, map3];
@@ -157,9 +164,9 @@ function Secondpage() {
     {
       image: map3,
       markers: [
-        { image: basket, x: 75, y: 370, name: 'Company C', description: 'Description of Company C' },
-        { image: autostrada, x: 200, y: 300, name: 'Autostrada Hangar', description: 'Autostrada Hangar is a new education, production and exhibition space in the ITP (Innovation and Training Park in Prizren). We considering art production as a sustainable form of learning and exchanging the needs of the community.' },
-        { image: green, x: 300, y: 340, name: 'Cacttus Education', description: 'Cacttus Education is the first associate V level professional school in the field of Information and Communication Technology. As a higher education institution, Cacttus Education provides students with a professional two-year study program.' },
+        { image: basket, x: 45, y: 340, name: 'Company C',  description: 'Description of Company C' },
+        { image: autostrada, x: 140, y: 270, name: 'Autostrada Hangar', description: 'Autostrada Hangar is a new education, production and exhibition space in the ITP (Innovation and Training Park in Prizren). We considering art production as a sustainable form of learning and exchanging the needs of the community.' },
+        { image: green, x: 250, y: 320, name: 'Cacttus Education', description: 'Cacttus Education is the first associate V level professional school in the field of Information and Communication Technology. As a higher education institution, Cacttus Education provides students with a professional two-year study program.' },
       ],
     },
   ];
@@ -355,20 +362,28 @@ const events = [
 
       {/* Check if the currentImageIndex is 2 for rendering specific content */}
       {currentImageIndex === 2 && (
-        <div className="updown">
-          {/* Render map3 */}
-          <div>
-            {/* <img src={map3} alt="Map 3" /> */}
-          </div>
-          <Link to="/thirdpage">
-            <img className="plusimage" src={up} alt="Plus" />
-          </Link>
-          <br />
-          <Link to="/fourthpage">
-            <img className="minuspage" src={down} alt="Minus" />
-          </Link>
+  <div className="updown">
+    {/* Render map3 */}
+    <div>
+      {/* <img src={companyLocations[currentImageIndex].image}  alt="Map 3" /> */}
+      {/* Render descriptions */}
+      {companyLocations[currentImageIndex].markers.map((marker, index) => (
+        <div data-aos="fade-left" key={index}>
+          {/* <text x={companyLocations[currentImageIndex].image.x} y={companyLocations[currentImageIndex].image.y + 30} textAnchor="middle" fontSize="8px" >{marker.name}</text> */}
+          {/* <p>{marker.description[2]}</p> */}
         </div>
-      )}
+      ))}
+    </div>
+    
+    <Link to="/thirdpage">
+      <img className="plusimage" src={up} alt="Plus" />
+    </Link>
+    <br />
+    <Link to="/fourthpage">
+      <img className="minuspage" src={down} alt="Minus" />
+    </Link>
+  </div>
+)}
 
       <center>
         {/* Render the image based on currentImageIndex */}
@@ -381,14 +396,19 @@ const events = [
 
         {/* Render markers based on currentImageIndex */}
         {companyLocations[currentImageIndex].markers.map((marker, index) => (
-          <img
-            key={index}
-            src={marker.image}
-            alt={marker.name}
-            style={{ position: 'absolute', left: marker.x, top: marker.y, cursor: 'pointer' }}
-            onClick={() => handleMarkerClick(marker)}
-          />
-        ))}
+  <div  key={index} style={{ position: 'absolute', left: marker.x, top: marker.y, textAlign: 'center' }}>
+    <img 
+      src={marker.image}
+      alt={marker.name}
+      style={{ cursor: 'pointer' }}
+      onClick={() => handleMarkerClick(marker)}
+    />
+    {/* Conditionally render the text only when index is 2 */}
+    {currentImageIndex === 2 && (
+      <p data-aos="fade-left" style={{ fontSize: '12px', marginTop: '-8px' }}>{marker.name}</p>
+    )}
+  </div>
+))}
       </center>
     </div>
       {/* Maping part */}
